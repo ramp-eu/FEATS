@@ -1,9 +1,12 @@
 [submodule "coffee"]
 	path = coffee
 	url = https://github.com/Dalma-Systems/coffee
+	branch = main
 [submodule "fi-brew"]
 	path = fi-brew
 	url = https://github.com/Dalma-Systems/fi-brew
+	branch = main
 [submodule "latte"]
 	path = latte
 	url = https://github.com/Dalma-Systems/latte
+	branch = main
