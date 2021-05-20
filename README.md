@@ -21,10 +21,17 @@ This project is part of [FIWARE](https://www.fiware.org/). For more information 
 ## Table of Contents
 - [FEATS](#feats)
   - [Table of Contents](#table-of-contents)
+  - [Background](#background)
   - [Build & Install](#build--install)
   - [API Overview](#api-overview)
   - [Documentation](#documentation)
   - [License](#license)
+
+## Background
+
+The challenge for FEATS’ project was to gather an ERP system, automatic warehouse and autonomous mobile robot (AMR) under the same standard language in order to automate the process of transporting raw material from the warehouse to each workstation with minimum human intervention. 
+From the manufacturing company’s point of view, FEATS is a smart robotics-based intralogistics service where they need to provide some inputs to get an autonomous material delivery from point A to point B.
+This smart robotics-based intralogistics service comprises all FIWARE ready components developed within the scope of the DIH2 program, namely: [CoFFEE](https://github.com/Dalma-Systems/coffee/) (communicates with ERP system), [FIROS](https://github.com/iml130/firos) (communicates with the AMR), [FI-BREW](https://github.com/Dalma-Systems/fi-brew/) (communicates with automatic warehouse) and [LATTE](https://github.com/Dalma-Systems/latte/) (smart agent that manages and controls all actions).
 
 ## Build & Install
 Information about how to install the components of FEATS can be found in the corresponding section of the Read The Docs [page](https://feats-dih2.readthedocs.io/en/latest/).
@@ -37,4 +44,4 @@ The full documentation can be found in the corresponding section of the Read The
 
 ## License
 
-[Apache](LICENSE) © 2021
+[Apache](LICENSE) © 2021 Dalma Systems
