@@ -1,0 +1,56 @@
+version: "3"
+services: 
+  firos: 
+    image: dalmasystems/firos
+    container_name: firos
+    depends_on: 
+      - orion
+      - rosmaster
+    environment: 
+      - PYTHONUNBUFFERED=1
+      - ROS_MASTER_URI=http://rosmaster:11311
+      - ROBOT_ID=testbot1
+      - CONTEXT_BROKER_ADDRESS=orion
+      - CONTEXT_BROKER_PORT=1026
+      - ENDPOINT_ADDRESS=firos
+      - ENDPOINT_PORT=4321
+    ports: 
+      - "10100:10100"
+  
+  robot-simulator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: dalmasystems/feats-simulator
+    depends_on: 
+      - rosmaster
+    environment: 
+      - PYTHONUNBUFFERED=1
+      - ROS_MASTER_URI=http://rosmaster:11311
+    command: bash -c 'sleep 5 && source /catkin_ws/devel/setup.bash && echo "Starting simulator" && rosrun feats_simulator main.py'
+
+  mongo: 
+    command: "--nojournal"
+    container_name: mongo
+    image: "mongo:3.4"
+
+  orion: 
+    command: "-dbhost mongo -logLevel DEBUG"
+    container_name: orion
+    hostname: orion
+    image: fiware/orion
+    links: 
+      - mongo
+    ports: 
+      - "21026:1026"
+
+  rosmaster: 
+    command: 
+      - roscore
+    container_name: rosmaster
+    hostname: rosmaster
+    image: "ros:melodic-ros-core"
+    ports: 
+      - "11311:11311"
+
+      
