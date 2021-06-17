@@ -10,3 +10,7 @@
 	path = latte
 	url = https://github.com/Dalma-Systems/latte
 	branch = main
+[submodule "broker"]
+	path = broker
+	url = https://github.com/Dalma-Systems/broker
+        branch = main

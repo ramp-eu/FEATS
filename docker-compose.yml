@@ -1,56 +1,141 @@
 version: "3"
 services: 
-  firos: 
-    image: dalmasystems/firos
-    container_name: firos
-    depends_on: 
-      - orion
-      - rosmaster
-    environment: 
-      - PYTHONUNBUFFERED=1
-      - ROS_MASTER_URI=http://rosmaster:11311
-      - ROBOT_ID=testbot1
-      - CONTEXT_BROKER_ADDRESS=orion
-      - CONTEXT_BROKER_PORT=1026
-      - ENDPOINT_ADDRESS=firos
-      - ENDPOINT_PORT=4321
-    ports: 
-      - "10100:10100"
+  # firos: 
+  #   image: dalmasystems/firos
+  #   container_name: firos
+  #   depends_on: 
+  #     - orion
+  #     - rosmaster
+  #   environment: 
+  #     - PYTHONUNBUFFERED=1
+  #     - ROS_MASTER_URI=http://rosmaster:11311
+  #     - ROBOT_ID=testbot1
+  #     - CONTEXT_BROKER_ADDRESS=orion
+  #     - CONTEXT_BROKER_PORT=1026
+  #     - ENDPOINT_ADDRESS=firos
+  #     - ENDPOINT_PORT=4321
+  #   ports: 
+  #     - "10100:10100"
   
-  robot-simulator:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    #image: dalmasystems/feats-simulator
-    depends_on: 
-      - rosmaster
-    environment: 
-      - PYTHONUNBUFFERED=1
-      - ROS_MASTER_URI=http://rosmaster:11311
-    command: bash -c 'sleep 5 && source /catkin_ws/devel/setup.bash && echo "Starting simulator" && rosrun feats_simulator main.py'
+  # robot-simulator:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   #image: dalmasystems/feats-simulator
+  #   depends_on: 
+  #     - rosmaster
+  #   environment: 
+  #     - PYTHONUNBUFFERED=1
+  #     - ROS_MASTER_URI=http://rosmaster:11311
+  #   command: bash -c 'sleep 5 && source /catkin_ws/devel/setup.bash && echo "Starting simulator" && rosrun feats_simulator main.py'
 
   mongo: 
     command: "--nojournal"
     container_name: mongo
     image: "mongo:3.4"
+    networks: 
+      - feats
 
   orion: 
     command: "-dbhost mongo -logLevel DEBUG"
     container_name: orion
     hostname: orion
     image: fiware/orion
+    networks: 
+      - feats
     links: 
       - mongo
     ports: 
       - "21026:1026"
 
-  rosmaster: 
-    command: 
-      - roscore
-    container_name: rosmaster
-    hostname: rosmaster
-    image: "ros:melodic-ros-core"
-    ports: 
-      - "11311:11311"
+  broker-api:
+    container_name: broker-api
+    hostname: broker-api
+    image: dalmasystems/broker
+    networks:
+      - feats
+    ports:
+      - "8080:8090"
+  
+  coffee-api:
+    container_name: coffee-api
+    hostname: coffee-api
+    image: coffee-api
+    networks:
+      - feats
+    ports:
+      - "8081:8092"
+    depends_on: 
+      - broker-api
+  
+  fibrew-api:
+    container_name: fibrew-api
+    hostname: fibrew-api
+    image: fibrew-api
+    networks:
+      - feats
+    ports:
+      - "8093:8093"
+    depends_on: 
+      - broker-api
 
-      
+  latte-api:
+    container_name: latte-api
+    hostname: latte-api
+    image: dalmasystems/latte
+    networks:
+      - feats
+    ports:
+      - "8091:8091"
+    depends_on: 
+      - broker-api
+
+  db-mysql:
+    container_name: mysql-db
+    hostname: mysql-db
+    image: mysql:5.7.34
+    networks:
+      - feats
+    environment: 
+      - MYSQL_ALLOW_EMPTY_PASSWORD=True
+    ports:
+      - "3306:3306"
+
+  # rosmaster: 
+  #   command: 
+  #     - roscore
+  #   container_name: rosmaster
+  #   hostname: rosmaster
+  #   image: "ros:melodic-ros-core"
+  #   ports: 
+  #     - "11311:11311"
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    container_name: mssql
+    hostname: mssql
+    networks:
+      - feats
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SafePass888
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+  
+  maildev:
+    image: maildev/maildev
+    container_name: maildev
+    hostname: maildev
+    networks: 
+      - feats
+    expose:
+      - "1025"
+    ports:
+      - "1080:1080"
+    command: 
+      - "maildev -w 1080 -s 1025"
+
+networks: 
+  feats:
+    name: feats
