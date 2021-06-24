@@ -4,8 +4,8 @@ This is the RTD page for FEATS, -- FIWARE-Enabled Autonomous Transport System --
 
 ## Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies mi quis hendrerit dolor magna. Eget magna fermentum iaculis eu non diam phasellus vestibulum. Facilisis leo vel fringilla est. Nascetur ridiculus mus mauris vitae. Vitae aliquet nec ullamcorper sit amet.
+FIWARE-Enabled Autonomous Transport System (FEATS) is a project whose scope is automated material transport within a production facility using an Autonomous Mobile Robot (AMR). From the manufacturing company’s point of view, FEATS is a smart robotics-based intralogistics service where they need to provide some inputs to get an autonomous material delivery from point A to point B. This smart robotics-based intralogistics service comprises all FIWARE ready components developed within the scope of the DIH2 program, namely: CoFFEE (communicates with ERP system), FIROS (communicates with the AMR), FI-BREW (communicates with automatic warehouse) and LATTE (smart agent that manages and controls all actions).
 
 ## About
 
-Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Nulla facilisi cras fermentum odio. Sit amet facilisis magna etiam tempor orci eu lobortis elementum. Sed arcu non odio euismod lacinia. Nullam eget felis eget nunc lobortis mattis aliquam. Arcu non odio euismod lacinia. 
+The FEATS project was developed under the scope of the [DIH<sup>2</sup> programme](http://www.dih-squared.eu/).

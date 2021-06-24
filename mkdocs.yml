@@ -4,4 +4,15 @@ site_description: FEATS project for DIH2 programme.
 repo_url: https://github.com/Dalma-Systems/FEATS.git
 nav:
   - Home: 'index.md'
+  - Architecture: 'architecture.md'
+  - Installation and User Manual: 
+    - Installation: 'installation.md'
+    - Build images: 'build-images.md'
+    - Getting started: 'getting-started.md'
+  - Step-by-step Tutorial:
+    - Using Docker: 'using-docker.md'
+    - Setup: 'setup.md'
+    - Running the simulator: 'simulator.md'
 theme: readthedocs
+markdown_extensions:
+  - sane_lists

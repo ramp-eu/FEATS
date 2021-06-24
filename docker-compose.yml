@@ -1,33 +1,37 @@
 version: "3"
 services: 
-  # firos: 
-  #   image: dalmasystems/firos
-  #   container_name: firos
-  #   depends_on: 
-  #     - orion
-  #     - rosmaster
-  #   environment: 
-  #     - PYTHONUNBUFFERED=1
-  #     - ROS_MASTER_URI=http://rosmaster:11311
-  #     - ROBOT_ID=testbot1
-  #     - CONTEXT_BROKER_ADDRESS=orion
-  #     - CONTEXT_BROKER_PORT=1026
-  #     - ENDPOINT_ADDRESS=firos
-  #     - ENDPOINT_PORT=4321
-  #   ports: 
-  #     - "10100:10100"
+  firos: 
+    image: dalmasystems/firos
+    container_name: firos
+    networks: 
+      - feats
+    depends_on: 
+      - orion
+      - rosmaster
+    environment: 
+      - PYTHONUNBUFFERED=1
+      - ROS_MASTER_URI=http://rosmaster:11311
+      - ROBOT_ID=aabbccddeeff
+      - CONTEXT_BROKER_ADDRESS=orion
+      - CONTEXT_BROKER_PORT=1026
+      - ENDPOINT_ADDRESS=firos
+      - ENDPOINT_PORT=4321
+    ports: 
+      - "10100:10100"
   
-  # robot-simulator:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   #image: dalmasystems/feats-simulator
-  #   depends_on: 
-  #     - rosmaster
-  #   environment: 
-  #     - PYTHONUNBUFFERED=1
-  #     - ROS_MASTER_URI=http://rosmaster:11311
-  #   command: bash -c 'sleep 5 && source /catkin_ws/devel/setup.bash && echo "Starting simulator" && rosrun feats_simulator main.py'
+  robot-simulator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: dalmasystems/feats-simulator
+    networks: 
+      - feats
+    depends_on: 
+      - rosmaster
+    environment: 
+      - PYTHONUNBUFFERED=1
+      - ROS_MASTER_URI=http://rosmaster:11311
+    command: bash -c 'sleep 5 && source /catkin_ws/devel/setup.bash && echo "Starting simulator" && rosrun feats_simulator main.py'
 
   mongo: 
     command: "--nojournal"
@@ -47,31 +51,37 @@ services:
       - mongo
     ports: 
       - "21026:1026"
+    expose:
+      - "1026"
 
   broker-api:
     container_name: broker-api
     hostname: broker-api
-    image: dalmasystems/broker
+    image: dalmasystems/broker #broker-api
     networks:
       - feats
     ports:
       - "8080:8090"
+    expose:
+      - "8090"
+    depends_on: 
+      - orion
   
   coffee-api:
     container_name: coffee-api
     hostname: coffee-api
-    image: coffee-api
+    image: dalmasystems/coffee #coffee-api
     networks:
       - feats
     ports:
-      - "8081:8092"
+      - "8092:8092"
     depends_on: 
       - broker-api
   
   fibrew-api:
     container_name: fibrew-api
     hostname: fibrew-api
-    image: fibrew-api
+    image: dalmasystems/fibrew #fibrew-api
     networks:
       - feats
     ports:
@@ -101,14 +111,16 @@ services:
     ports:
       - "3306:3306"
 
-  # rosmaster: 
-  #   command: 
-  #     - roscore
-  #   container_name: rosmaster
-  #   hostname: rosmaster
-  #   image: "ros:melodic-ros-core"
-  #   ports: 
-  #     - "11311:11311"
+  rosmaster: 
+    command: 
+      - roscore
+    container_name: rosmaster
+    hostname: rosmaster
+    image: "ros:melodic-ros-core"
+    networks: 
+      - feats
+    ports: 
+      - "11311:11311"
 
   mssql:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu

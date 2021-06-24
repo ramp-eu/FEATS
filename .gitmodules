@@ -14,3 +14,9 @@
 	path = broker
 	url = https://github.com/Dalma-Systems/broker
         branch = main
+[submodule "contracts"]
+	path = contracts
+	url = https://github.com/Dalma-Systems/contracts.git
+[submodule "commons"]
+	path = commons
+	url = https://github.com/Dalma-Systems/commons.git
