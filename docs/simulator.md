@@ -202,4 +202,4 @@ Finally, we can check that the work order was correctly executed and the system 
 
 1. In Postman go to `orion > entities > get entities by id` and paste the previously obtained workorder id in the URL
 2. Send the request
-3. The response should return the full information of the work order, namely the `startedAt`, `endedAt` and `status` attribute, with the first two showing the start and end times of the work order, while the `status` should show a value of `ended`.
+3. The response should return the full information of the work order, namely the `startedAt`, `endedAt` and `status` attribute, with the first two showing the start and end times of the work order, while the `status` should show a value of `ended`. Keep in mind that the `startedAt` and `endedAt` attributes only show up after the work order starts and ends, respectively.

@@ -1,0 +1,4689 @@
+{
+	"info": {
+		"_postman_id": "5aecd63f-2023-4bf8-b176-84fe13523376",
+		"name": "dalma feats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "broker",
+			"item": [
+				{
+					"name": "robot",
+					"item": [
+						{
+							"name": "add robot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latitude\": 41.16501359269536,\n    \"longitude\": -8.606473803520203,\n    \"angle\": 1.5707963268,\n    \"version\": \"1.2 Beta\",\n    \"name\": \"Blue robot\",\n    \"status\": \"idle\",\n    \"battery\": 80\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/robot",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get robots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/robot",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get robot by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/robot/urn:ngsi-ld:AMR:123456789",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"robot",
+										"urn:ngsi-ld:AMR:123456789"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update robot",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"action\": \"\",\n    \"pendingDestination\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/robot/urn:ngsi-ld:AMR:61e2398c6cfd407d99881f4cd50842c7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"robot",
+										"urn:ngsi-ld:AMR:61e2398c6cfd407d99881f4cd50842c7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete robot by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/robot/urn:ngsi-ld:AMR:54b20314ea5a",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"robot",
+										"urn:ngsi-ld:AMR:54b20314ea5a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "warehouse",
+					"item": [
+						{
+							"name": "add warehouse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latitude\": 20.95,\n    \"longitude\": 22.4,\n    \"angle\": -1.5198,\n    \"name\": \"Armazém de Graus\",\n    \"status\": \"ready\",\n    \"erpId\": \"0007\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add warehouse with materials",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latitude\": 40.70884,\n    \"longitude\": -8.4906427,\n    \"angle\": 1.6707963268,\n    \"name\": \"Armazém de Graus\",\n    \"status\": \"ready\",\n    \"erpId\": \"0007\",\n    \"materials\": [\n        {\n            \"material\": \"litio\",\n            \"batch\": \"123\",\n            \"quantity\": \"20\",\n            \"unit\": \"KG\"\n        },\n        {\n            \"material\": \"berilio\",\n            \"batch\": \"ab1\",\n            \"quantity\": \"15\",\n            \"unit\": \"KG\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get warehouses",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get warehouse by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/urn:ngsi-ld:Warehouse:5e22db05d3614ce6aeeea7aef24b0c4c",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"urn:ngsi-ld:Warehouse:5e22db05d3614ce6aeeea7aef24b0c4c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get warehouse by id external",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/external/0000025",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"external",
+										"0000025"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update warehouse",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"erpId\": \"0075\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/urn:ngsi-ld:Warehouse:db707d82f8604e919e018066bec896a4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"urn:ngsi-ld:Warehouse:db707d82f8604e919e018066bec896a4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete warehouse by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/urn:ngsi-ld:Warehouse:200e40dfbda7408681064b09ae3015da",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"urn:ngsi-ld:Warehouse:200e40dfbda7408681064b09ae3015da"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "warehouse material",
+					"item": [
+						{
+							"name": "add warehouse material",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"material\": \"Test1\",\n    \"batch\": \"Test1\",\n    \"quantity\": 1.2,\n    \"unit\": \"KG\",\n    \"erpId\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/urn:ngsi-ld:Warehouse:200e40dfbda7408681064b09ae3015da/material",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"urn:ngsi-ld:Warehouse:200e40dfbda7408681064b09ae3015da",
+										"material"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get warehouses materials",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/material",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"material"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get warehouse material by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/material/urn:ngsi-ld:Material:5ac461f886d4472fae1ad74eddc15e68",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"material",
+										"urn:ngsi-ld:Material:5ac461f886d4472fae1ad74eddc15e68"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update warehouse material",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"material\": \"lito_update\",\n    \"batch\": \"123_update\",\n    \"quantity\": 201\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/material/urn:ngsi-ld:Material:1597404412976",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"material",
+										"urn:ngsi-ld:Material:1597404412976"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete warehouse material by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/warehouse/material/urn:ngsi-ld:Material:7bdcf1e33a4f4e8e8d23619fbd2bfac0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"warehouse",
+										"material",
+										"urn:ngsi-ld:Material:7bdcf1e33a4f4e8e8d23619fbd2bfac0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "work station",
+					"item": [
+						{
+							"name": "add workstation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latitude\": 12.4,\n    \"longitude\": 36.9,\n    \"angle\": 0.0511,\n    \"name\": \"K50_1\",\n    \"status\": \"ready\",\n    \"erpId\": \"0161\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/work",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"work"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workstations",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/work",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"work"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workstation by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/work/urn:ngsi-ld:Workstation:5d1794f1448c4791ac66860890e92723",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"work",
+										"urn:ngsi-ld:Workstation:5d1794f1448c4791ac66860890e92723"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update workstation",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"erpId\": \"0161\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/work/urn:ngsi-ld:Workstation:04a31bfa854343bab941aac2c04e1740",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"work",
+										"urn:ngsi-ld:Workstation:04a31bfa854343bab941aac2c04e1740"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete workstation by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/work/urn:ngsi-ld:Workstation:be5006abe1c74f48ac859722d9a88e37",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"work",
+										"urn:ngsi-ld:Workstation:be5006abe1c74f48ac859722d9a88e37"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "idle station",
+					"item": [
+						{
+							"name": "add idle station",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latitude\": 24.3,\n    \"longitude\": 20,\n    \"angle\": 0.071,\n    \"name\": \"zona de descanso\",\n    \"status\": \"idle\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/idle",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"idle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get idle stations",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/idle",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"idle"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get idle station by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/idle/urn:ngsi-ld:Idlestation:0ff2ce5a6d8a4c1fa74a4bb3cbc182ca",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"idle",
+										"urn:ngsi-ld:Idlestation:0ff2ce5a6d8a4c1fa74a4bb3cbc182ca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update idle station",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"charging point at left corner\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/idle/urn:ngsi-ld:Idlestation:0ff2ce5a6d8a4c1fa74a4bb3cbc182ca",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"idle",
+										"urn:ngsi-ld:Idlestation:0ff2ce5a6d8a4c1fa74a4bb3cbc182ca"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete idle station by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/station/idle/urn:ngsi-ld:Idlestation:f232f33384644d3c87c1168d296db0f8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"station",
+										"idle",
+										"urn:ngsi-ld:Idlestation:f232f33384644d3c87c1168d296db0f8"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "work order",
+					"item": [
+						{
+							"name": "add workorder DIH",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"scheduled\",\n    \"scheduledAt\": \"{{currentDate}}\",\n    \"warehouseId\": \"urn:ngsi-ld:Warehouse:bc23faf44cb84d8ea9fd40580a896662\",\n    \"workingStationId\": \"urn:ngsi-ld:Workstation:edd3ea7b69684bf5809d6b7f5b22e539\",\n    \"materials\": [\n        {\n            \"id\": \"urn:ngsi-ld:Workstation:edd3ea7b69684bf5809d6b7f5b22e539\",\n            \"quantity\": 1.0\n        }\n    ],\n    \"erpId\": \"690001139833\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add workorder DIH PROD",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"scheduled\",\n    \"scheduledAt\": \"{{currentDate}}\",\n    \"warehouseId\": \"urn:ngsi-ld:Warehouse:200e40dfbda7408681064b09ae3015da\",\n    \"workingStationId\": \"urn:ngsi-ld:Workstation:f1f74c2b30944e58bd87f11f28bdf481\",\n    \"materials\": [\n        {\n            \"id\": \"urn:ngsi-ld:Material:94ab389c979c40deb3ad14c7a50e9810\",\n            \"quantity\": 1.0\n        }\n    ],\n    \"erpId\": \"order_test_1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add workorder",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"scheduled\",\n    \"scheduledAt\": \"{{currentDate}}\",\n    \"warehouseId\": \"urn:ngsi-ld:Warehouse:5e22db05d3614ce6aeeea7aef24b0c4c\",\n    \"workingStationId\": \"urn:ngsi-ld:Workstation:5e41ec9ff64f467e8d8bd9090d094d77\",\n    \"materials\": [\n        {\n            \"id\": \"urn:ngsi-ld:Material:832744a1cd304af6b5f83d1b6d08be68\",\n            \"quantity\": 7.236\n        }\n    ],\n    \"erpId\": \"orderid_312\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workorders",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workorders filtered",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder/filter?start=2020-09-22T11:00:00.000Z&end=2020-09-22T11:29:30.000Z",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "2020-09-22T11:00:00.000Z"
+										},
+										{
+											"key": "end",
+											"value": "2020-09-22T11:29:30.000Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workorder by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder/urn:ngsi-ld:WorkOrder:f54e310421d043a0a58a131106ac0193",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder",
+										"urn:ngsi-ld:WorkOrder:f54e310421d043a0a58a131106ac0193"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workorder by id external",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder/external/931323901?scheduledAt=2021-02-09T21:52:00",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder",
+										"external",
+										"931323901"
+									],
+									"query": [
+										{
+											"key": "scheduledAt",
+											"value": "2021-02-09T21:52:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update workorder",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"erpId\": \"8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder/urn:ngsi-ld:WorkOrder:510c7105e3dd459faf1eb1f6102597d7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder",
+										"urn:ngsi-ld:WorkOrder:510c7105e3dd459faf1eb1f6102597d7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete workorder by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder/urn:ngsi-ld:WorkOrder:510c7105e3dd459faf1eb1f6102597d7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder",
+										"urn:ngsi-ld:WorkOrder:510c7105e3dd459faf1eb1f6102597d7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "integrate workorder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"scheduledAt\": \"2020-09-30T16:30:00.000\",\n    \"warehouseId\": \"urn:ngsi-ld:Warehouse:1601386775899\",\n    \"workingStationId\": \"urn:ngsi-ld:Workstation:1601387226727\",\n    \"erpId\": \"12345\",\n    \"materials\": [\n        {\n            \"id\": \"urn:ngsi-ld:Material:1601386775918\",\n            \"quantity\": 30\n        },\n        {\n            \"id\": \"urn:ngsi-ld:Material:1601386775934\",\n            \"quantity\": 4\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/workorder/integrate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"workorder",
+										"integrate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "subscription",
+					"item": [
+						{
+							"name": "add battery subscription",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597416267220\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot battery\",\n    \"attributes\": [\n        \"battery\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"battery\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add status subscription",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597343980645\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot status\",\n    \"attributes\": [\n        \"status\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"status\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add location subscription",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597343980645\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot location\",\n    \"attributes\": [\n        \"location\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"location\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get subscriptions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597416267220\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot battery\",\n    \"attributes\": [\n        \"battery\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"battery\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get subscription by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597416267220\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot battery\",\n    \"attributes\": [\n        \"battery\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"battery\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription/6028145c1ecf56e0ee552366",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription",
+										"6028145c1ecf56e0ee552366"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get subscriptions by condition attr",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597416267220\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot battery\",\n    \"attributes\": [\n        \"battery\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"battery\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription/condition?attr=integratedAt",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription",
+										"condition"
+									],
+									"query": [
+										{
+											"key": "attr",
+											"value": "integratedAt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete subscription by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"entities\": [\n        {\n            \"id\": \"urn:ngsi-ld:AMR:1597343980645\",\n            \"type\": \"AMR\"\n        }\n    ],\n    \"description\": \"A subscription to get info about robot location\",\n    \"attributes\": [\n        \"location\"\n    ],\n    \"notificationUrl\": \"http://192.168.1.90:8090/api/admin/robot/notification/status\",\n    \"notificationAttributes\": [\n        \"id\",\n        \"location\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/broker/subscription/5f36a2434fc011c38022c46d",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"broker",
+										"subscription",
+										"5f36a2434fc011c38022c46d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "coffee",
+			"item": [
+				{
+					"name": "erp",
+					"item": [
+						{
+							"name": "integrate work orders",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_coffee}}/api/coffee/workorder/integrate",
+									"host": [
+										"{{url_coffee}}"
+									],
+									"path": [
+										"api",
+										"coffee",
+										"workorder",
+										"integrate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insert generated",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"orderId\": \"11\",\n        \"materialId\": \"11\",\n        \"materialDesc\": \"Material 11\",\n        \"quantity\": 12.3,\n        \"unit\": \"kg\",\n        \"batch\": \"QS11\",\n        \"workStationId\": \"0161\",\n        \"warehouseId\": \"0075\",\n        \"day\": \"2021-03-16\",\n        \"hour\": \"16:52:00\"\n    },\n    {\n        \"orderId\": \"12\",\n        \"materialId\": \"12\",\n        \"materialDesc\": \"Material 12\",\n        \"quantity\": 12.5,\n        \"unit\": \"kg\",\n        \"batch\": \"QS12\",\n        \"workStationId\": \"0151\",\n        \"warehouseId\": \"0075\",\n        \"day\": \"2021-03-16\",\n        \"hour\": \"16:53:00\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_coffee}}/api/coffee/workorder/insert",
+									"host": [
+										"{{url_coffee}}"
+									],
+									"path": [
+										"api",
+										"coffee",
+										"workorder",
+										"insert"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sap mock server",
+					"item": [
+						{
+							"name": "sap mock server",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://6c50e27e-0ca1-43b8-8333-4e5b6804ea44.mock.pstmn.io/sap/workorders",
+									"protocol": "https",
+									"host": [
+										"6c50e27e-0ca1-43b8-8333-4e5b6804ea44",
+										"mock",
+										"pstmn",
+										"io"
+									],
+									"path": [
+										"sap",
+										"workorders"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "www.durit.pt/sap/workorders",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/xml",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "xml"
+												}
+											}
+										},
+										"url": {
+											"raw": "www.durit.pt/sap/workorders",
+											"host": [
+												"www",
+												"durit",
+												"pt"
+											],
+											"path": [
+												"sap",
+												"workorders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "xml",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 28 Sep 2020 08:32:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/xml"
+										},
+										{
+											"key": "Content-Length",
+											"value": "369"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"171-oZAdjnM+6wlSoIBvlEXQ2SNhRg8\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "set-cookie",
+											"value": "sails.sid=s%3ApDmh6LLHL_HF6etwns-op-QMOIY4YhWj.YqpkxD6ZOqhfMRbxK4wPGTUXoEiUBnNCzjDvEezAgy4; Path=/; HttpOnly"
+										}
+									],
+									"cookie": [],
+									"body": "<?xml version=\"1.0\"?>\n<n0:ZFTS_PLANResponse xmlns:n0=\"urn:sap-com:document:sap:rfc:functions\">\n\t<EX_ERRO>OK</EX_ERRO>\n\t<TBL_PLANODIARIO>\n\t\t<item>\n\t\t\t<AGRUPADOR>0000012</AGRUPADOR>\n\t\t\t<DEPOSITO>0075</DEPOSITO>\n\t\t\t<TXTDEPOSITO>Arm.Autom. Graus</TXTDEPOSITO>\n\t\t\t<ESTACAO>0161</ESTACAO>\n\t\t\t<TXTESTACAO>K50_1</TXTESTACAO>\n\t\t\t<ORDEM>000006249859</ORDEM>\n\t\t\t<MATERIAL>000000000001001679</MATERIAL>\n\t\t\t<TXTMATERIAL>GD40 C/ PARAFINA</TXTMATERIAL>\n\t\t\t<LOTE>H0003</LOTE>\n\t\t\t<DIA>2020-10-19</DIA>\n\t\t\t<HORA>15:12:00</HORA>\n\t\t\t<QUANTIDADE>15.198</QUANTIDADE>\n\t\t\t<UNIDADE>KG</UNIDADE>\n\t\t\t<ESTADO/>\n\t\t</item>\n        <item>\n            <AGRUPADOR>0000012</AGRUPADOR>\n            <DEPOSITO>0075</DEPOSITO>\n            <TXTDEPOSITO>Arm.Autom. Graus</TXTDEPOSITO>\n            <ESTACAO>0161</ESTACAO>\n            <TXTESTACAO>K50_1</TXTESTACAO>\n            <ORDEM>000006249860</ORDEM>\n            <MATERIAL>000000000001001611</MATERIAL>\n            <TXTMATERIAL>GD10N C/ PARAFINA</TXTMATERIAL>\n            <LOTE></LOTE>\n\t\t\t<DIA>2020-10-20</DIA>\n\t\t\t<HORA>19:08:00</HORA>\n            <QUANTIDADE>7.236</QUANTIDADE>\n            <UNIDADE>KG</UNIDADE>\n            <ESTADO/>\n        </item>\n        <item>\n            <AGRUPADOR>0000012</AGRUPADOR>\n            <DEPOSITO>0007</DEPOSITO>\n            <TXTDEPOSITO>Armazém de Graus</TXTDEPOSITO>\n            <ESTACAO>0162</ESTACAO>\n            <TXTESTACAO>K50_2</TXTESTACAO>\n            <ORDEM>000006249861</ORDEM>\n            <MATERIAL>000000000001001611</MATERIAL>\n            <TXTMATERIAL>GD10N C/ PARAFINA</TXTMATERIAL>\n            <LOTE>M0012</LOTE>\n\t\t\t<DIA>2020-10-20</DIA>\n\t\t\t<HORA>19:53:30</HORA>\n            <QUANTIDADE>20.236</QUANTIDADE>\n            <UNIDADE>KG</UNIDADE>\n            <ESTADO/>\n        </item>\n\t</TBL_PLANODIARIO>\n</n0:ZFTS_PLANResponse>\n"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "latte",
+			"item": [
+				{
+					"name": "robot",
+					"item": [
+						{
+							"name": "add robot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"robot\",\n    \"battery\": 100,\n    \"version\": \"1.0\",\n    \"macAddress\": \"54:b2:03:14:ea:5b\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/robot",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get robots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/robot",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get robot by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/robot/urn:ngsi-ld:AMR:d178c79fb5874e5eb523074b1afefbc0",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"robot",
+										"urn:ngsi-ld:AMR:d178c79fb5874e5eb523074b1afefbc0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "work order",
+					"item": [
+						{
+							"name": "execute",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/workorder/urn:ngsi-ld:WorkOrder:f54e310421d043a0a58a131106ac0193/execute",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"workorder",
+										"urn:ngsi-ld:WorkOrder:f54e310421d043a0a58a131106ac0193",
+										"execute"
+									],
+									"query": [
+										{
+											"key": "robotId",
+											"value": "urn:ngsi-ld:AMR:abcd",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "schedule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"id\": \"urn:ngsi-ld:WorkOrder:c00dd35b52704228872b8d822294ccdb\",\n        \"date\": \"2021-01-21T14:34:00\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/workorder/schedule",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"workorder",
+										"schedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/workorder/status/reset",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"workorder",
+										"status",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "scheduler",
+					"item": [
+						{
+							"name": "reschedule all started",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/scheduler/reschedule",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"scheduler",
+										"reschedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reschedule by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/scheduler/reschedule/JobExecuteWorkOrder1600770455949",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"scheduler",
+										"reschedule",
+										"JobExecuteWorkOrder1600770455949"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unschedule all pending",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/scheduler/unschedule",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"scheduler",
+										"unschedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "unschedule by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/scheduler/unschedule/JobExecuteWorkOrder1601379932397",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"scheduler",
+										"unschedule",
+										"JobExecuteWorkOrder1601379932397"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notifications",
+					"item": [
+						{
+							"name": "update status",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"stopped\",\n    \"contextId\": \"order-53ed6d4870e34b92a288445a3c23d0a2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/notification/robot/urn:ngsi-ld:AMR:56379aa57c404cc8a57d2635c9b6bf75/status",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"notification",
+										"robot",
+										"urn:ngsi-ld:AMR:56379aa57c404cc8a57d2635c9b6bf75",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "fi-brew",
+			"item": [
+				{
+					"name": "modula",
+					"item": [
+						{
+							"name": "insert",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_fibrew}}/api/fibrew/modula/add",
+									"host": [
+										"{{url_fibrew}}"
+									],
+									"path": [
+										"api",
+										"fibrew",
+										"modula",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "supervisor ui",
+			"item": [
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "get work orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workorder?sort=scheduleAt,desc&startDate=2021-03-15&endDate=2021-03-15",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workorder"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "scheduleAt,desc"
+										},
+										{
+											"key": "sort",
+											"value": "status,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "startedAt,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "endedAt,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "erpId,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "warehouse,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "workstation,desc",
+											"disabled": true
+										},
+										{
+											"key": "startDate",
+											"value": "2021-03-15"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-03-15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get work order by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workorder/1a0f58d5d68b40b08e6b816a15638855",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workorder",
+										"1a0f58d5d68b40b08e6b816a15638855"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get work order materials by order id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authorization}}"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workorder/f56c25d6648b4dcaa745b312471cd099/material?page=0&size=10&sort=type,desc",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workorder",
+										"f56c25d6648b4dcaa745b312471cd099",
+										"material"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "sort",
+											"value": "id,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "quantity,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "type,desc"
+										},
+										{
+											"key": "sort",
+											"value": "unit,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "batch,desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "work order actions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"action\": \"CANCEL\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workorder/703c2a41b70543028f1690ecb3eda066/action",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workorder",
+										"703c2a41b70543028f1690ecb3eda066",
+										"action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get workstations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workstation",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workstation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "set workstation",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"workStation\": \"urn:ngsi-ld:Workstation:8c4204c8c8da48afb77089f219cf2e76\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workorder/urn:ngsi-ld:WorkOrder:be624f9290b44d52b34ffb439f737307/workstation",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workorder",
+										"urn:ngsi-ld:WorkOrder:be624f9290b44d52b34ffb439f737307",
+										"workstation"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "robot",
+					"item": [
+						{
+							"name": "get robots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/robot",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get robot by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/robot/urn:ngsi-ld:AMR:54b20314ea5b",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"robot",
+										"urn:ngsi-ld:AMR:54b20314ea5b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"action\": \"READY\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/robot/urn:ngsi-ld:AMR:54b20314ea5b/action",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"robot",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sync",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authorization}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/robot/urn:ngsi-ld:AMR:123456789/sync",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"robot",
+										"urn:ngsi-ld:AMR:123456789",
+										"sync"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "settings",
+					"item": [
+						{
+							"name": "get settings",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/settings",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"settings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get settings by prop",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/settings/robotMinimumBattery",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"settings",
+										"robotMinimumBattery"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update settings",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"robotMinimumBattery\": \"20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/settings",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"settings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "account",
+					"item": [
+						{
+							"name": "invite supervisor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"controloma@durit.pt\",\n    \"firstName\": \"Controloma\",\n    \"lastName\": \"Controloma\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/account/supervisor/invite",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"account",
+										"supervisor",
+										"invite"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"pm.environment.set(\"authorization\", \"Bearer \" + jsonData.access_token);",
+											"pm.environment.set(\"refresh\", jsonData.refresh_token);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "rodrigues.andre28@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "andre@bybright.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password1",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "admin@domain.local",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "3e3f2b95a9ad424e9fb9a6e633885d30",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "jscardoso73@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "supervisor@fakemail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "PasswordProd2",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/login",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"pm.environment.set(\"authorization\", \"Bearer \" + jsonData.access_token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "{{refresh}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/login",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"login"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "pt_PT",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authorization}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/logout",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"logout"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "pt_PT",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "password reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"david.teixeira@dalmasystems.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/account/supervisor/password/reset",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"account",
+										"supervisor",
+										"password",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "password set",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"j109Asfa5Mk8awHKYWq0J3D2NMqbOOcPjR5NUCTAJPLwkWTBKguZ4T3kzSmHQQKvjAPuxwnBhER3gTaQjA2EODA1sCVnwvpu\",\n    \"password\": \"DuritSupervisor123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/account/supervisor/password/set",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"account",
+										"supervisor",
+										"password",
+										"set"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/account",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update information",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"andre@bybright.com\",\n    \"firstName\": \"first\",\n    \"lastName\": \"last\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/account/information",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"account",
+										"information"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update password",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\": \"Password1\",\n    \"newPassword\": \"Password2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/account/password",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"account",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notifications",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/notification",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "force sync to UI",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/notification/sync",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"notification",
+										"sync"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "resources",
+					"item": [
+						{
+							"name": "get logo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/resources/images/logo.png",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"resources",
+										"images",
+										"logo.png"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "storage ui",
+			"item": [
+				{
+					"name": "orders",
+					"item": [
+						{
+							"name": "get current work order",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/workorder/current",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"workorder",
+										"current"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get work orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/workorder?page=0&size=10&sort=erpId,desc&startDate=2021-03-15&endDate=2021-03-15",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"workorder"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "sort",
+											"value": "scheduleAt,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "status,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "startedAt,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "endedAt,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "erpId,desc"
+										},
+										{
+											"key": "sort",
+											"value": "warehouse,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "workstation,desc",
+											"disabled": true
+										},
+										{
+											"key": "startDate",
+											"value": "2021-03-15"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-03-15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get work order by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/workorder/de162967ddab4397b53832ecc1293630",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"workorder",
+										"de162967ddab4397b53832ecc1293630"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get work order materials by order id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authorization}}"
+									}
+								],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/supervisor/workorder/de162967ddab4397b53832ecc1293630/material?page=0&size=2&sort=id,desc",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"supervisor",
+										"workorder",
+										"de162967ddab4397b53832ecc1293630",
+										"material"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "2"
+										},
+										{
+											"key": "sort",
+											"value": "id,desc"
+										},
+										{
+											"key": "sort",
+											"value": "quantity,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "type,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "unit,desc",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "batch,desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "force sync to UI",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/notification/sync",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"notification",
+										"sync"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "robot",
+					"item": [
+						{
+							"name": "get robots",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/robot",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"robot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get robot by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/robot/urn:ngsi-ld:AMR:66f2498965884080b0e2d43ba7f135a0",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"robot",
+										"urn:ngsi-ld:AMR:66f2498965884080b0e2d43ba7f135a0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "account",
+					"item": [
+						{
+							"name": "invite storage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"controloma@durit.pt\",\n    \"firstName\": \"Controloma\",\n    \"lastName\": \"Controloma\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/account/storage/invite",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"account",
+										"storage",
+										"invite"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"pm.environment.set(\"authorization\", \"Bearer \" + jsonData.access_token);",
+											"pm.environment.set(\"refresh\", jsonData.refresh_token);",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "rodrigues.andre28@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "andre@bybright.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "admin@domain.local",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "5854ef9f8d304c2381ddbe671f360e0d",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "jscardoso73@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "ineslobodesign@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "PasswordProd2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/login",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"pm.environment.set(\"authorization\", \"Bearer \" + jsonData.access_token);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "grant_type",
+											"value": "refresh_token",
+											"type": "text"
+										},
+										{
+											"key": "refresh_token",
+											"value": "{{refresh}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/login",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"login"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "pt_PT",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{authorization}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/logout",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"logout"
+									],
+									"query": [
+										{
+											"key": "lang",
+											"value": "pt_PT",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "password reset",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"supervisor@fakemail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/account/storage/password/reset",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"account",
+										"storage",
+										"password",
+										"reset"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "password set",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"y2E5KDCMBuouBKRU6duFDmzBc4iUrEuvoosEKIuVRo2hisB8CFGvK6PZnHkvc6b4iE3rIOyK9HBTqQpbaYL4xUnBC2y6rBcz\",\n    \"password\": \"Password1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/account/storage/password/set",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"account",
+										"storage",
+										"password",
+										"set"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/account",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"account"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "notifications",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/notification",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "force sync to UI",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/storage/notification/sync",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"storage",
+										"notification",
+										"sync"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "robot ui",
+			"item": [
+				{
+					"name": "notifications",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/robot/notification",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"robot",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "force sync to UI",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_latte}}/api/latte/robot/notification/sync",
+									"host": [
+										"{{url_latte}}"
+									],
+									"path": [
+										"api",
+										"latte",
+										"robot",
+										"notification",
+										"sync"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"authorization_robot\", \"Bearer \" + jsonData.access_token);",
+									"pm.environment.set(\"refresh\", jsonData.refresh_token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "54b20314ea5b",
+									"description": "dev",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "durit",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "123456789",
+									"description": "local",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_latte}}/api/latte/login",
+							"host": [
+								"{{url_latte}}"
+							],
+							"path": [
+								"api",
+								"latte",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.environment.set(\"authorization\", \"Bearer \" + jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{refresh}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_latte}}/api/latte/login",
+							"host": [
+								"{{url_latte}}"
+							],
+							"path": [
+								"api",
+								"latte",
+								"login"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "pt_PT",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get work order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization_robot}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_latte}}/api/latte/robot/workorder",
+							"host": [
+								"{{url_latte}}"
+							],
+							"path": [
+								"api",
+								"latte",
+								"robot",
+								"workorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orion",
+			"item": [
+				{
+					"name": "entities",
+					"item": [
+						{
+							"name": "get all entities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/entities?options=count&limit=1000",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "attrs",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "options",
+											"value": "count"
+										},
+										{
+											"key": "type",
+											"value": "Material",
+											"disabled": true
+										},
+										{
+											"key": "q",
+											"value": "refWorkstation==urn:ngsi-ld:Workstation:1597404683220",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all entities filtered",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/entities?type=WorkOrder&offset=0&limit=1000&q=erpId==id000001139834;scheduledAt==2021-01-05T19:02:28.00Z",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "WorkOrder"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "1000"
+										},
+										{
+											"key": "q",
+											"value": "erpId==id000001139834;scheduledAt==2021-01-05T19:02:28.00Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get entities by type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/entities?type=AMR",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "AMR"
+										},
+										{
+											"key": "type",
+											"value": "Warehouse",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Material",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Workstation",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Idlestation",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "WorkOrder",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "WorkOrderItem",
+											"disabled": true
+										},
+										{
+											"key": "attrs",
+											"value": "refWorkOrder",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get entities by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:AMR:54b20314ea5b",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:AMR:54b20314ea5b"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "AMR",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Warehouse",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Material",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Workstation",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Workorder",
+											"disabled": true
+										},
+										{
+											"key": "attrs",
+											"value": "refWorkorder",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update entity by id",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refDestination\": {\n            \"type\": \"Relationship\",\n            \"value\": \"urn:ngsi-ld:Workstation:d1781e1b485948b0975610a9748ac3d7\",\n            \"metadata\": {\n                \"context\": {\n                    \"type\": \"Text\",\n                    \"value\": \"order-a145dceb8c6646d7801a09fc985e35f6\"\n                },\n                \"dateModified\": {\n                    \"type\": \"DateTime\",\n                    \"value\": \"{{currentDate}}\"\n                }\n            }\n        }\n}"
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:AMR:54b20314ea5b/attrs",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update robot status - reset status",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"available\": {\n        \"type\": \"Boolean\",\n        \"value\": true\n    },\n    \"refDestination\": {\n        \"type\": \"Relationship\",\n        \"value\": \"\"\n    },\n    \"refPayload\": {\n        \"type\": \"Relationship\",\n        \"value\": [],\n        \"metadata\": {}\n    },\n    \"refWorkOrder\": {\n        \"type\": \"Relationship\",\n        \"value\": \"\",\n        \"metadata\": {}\n    },\n    \"action\": {\n        \"type\": \"Text\",\n        \"value\": \"\"\n    },\n    \"pendingDestination\": {\n        \"type\": \"Text\",\n        \"value\": \"\"\n    },\n    \"status\": {\n        \"type\": \"Text\",\n        \"value\": \"idle\",\n        \"metadata\": {\n            \"dateModified\": {\n                \"type\": \"DateTime\",\n                \"value\": \"{{currentDate}}\"\n            }\n        }\n    }\n}"
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:AMR:54b20314ea5b/attrs",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update robot status",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": {\n        \"type\": \"Text\",\n        \"value\": \"stopped\",\n        \"metadata\": {\n            \"dateModified\": {\n                \"type\": \"DateTime\",\n                \"value\": \"{{currentDate}}\"\n            },\n            \"context\": {\n                \"type\": \"Text\",\n                \"value\": \"order-e20f9c0caaad41f6b3271d5aa413f215\"\n            }\n        }\n    }\n}"
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:AMR:54b20314ea5b/attrs",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update robot battery",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"battery\": {\n        \"type\": \"Number\",\n        \"value\": 81,\n        \"metadata\": {\n            \"dateModified\": {\n                \"type\": \"DateTime\",\n                \"value\": \"{{currentDate}}\"\n            }\n        }\n    }\n}"
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:AMR:54b20314ea5b/attrs",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update robot heartbeat",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"heartbeat\": {\n        \"type\": \"DateTime\",\n        \"value\": \"{{currentDate}}\",\n        \"metadata\": {}\n    }\n}"
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:AMR:54b20314ea5b/attrs",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"attrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update op",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const dateNow= new Date();",
+											"pm.environment.set('currentDate', dateNow.toISOString());",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"actionType\": \"APPEND\",\n    \"entities\": [\n        {\n            \"heartbeat\": {\n                \"type\": \"DateTime\",\n                \"value\": \"{{currentDate}}\",\n                \"metadata\": {}\n            },\n            \"id\": \"urn:ngsi-ld:AMR:54b20314ea5b\",\n            \"type\": \"AMR\"\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/op/update",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"op",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete entities (optional type)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/entities/urn:ngsi-ld:Material:22a26f6350cc42dfafd61ddbc152e26a",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"entities",
+										"urn:ngsi-ld:Material:22a26f6350cc42dfafd61ddbc152e26a"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "AMR",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Warehouse",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Workstation",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "WorkOrder",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "WorkOrderItem",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "subscriptions",
+					"item": [
+						{
+							"name": "create subscription for entity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"backend heartbeat subscription for robot\",\n    \"subject\": {\n        \"entities\": [\n            {\n                \"id\": \"urn:ngsi-ld:AMR:54b20314ea5b\",\n                \"type\": \"AMR\"\n            }\n        ],\n        \"condition\": {\n            \"attrs\": [\n                \"heartbeat\"\n            ]\n        }\n    },\n    \"notification\": {\n        \"http\": {\n            \"url\": \"http://broker.dalma.brightalgo.tech/api/broker/robot/notification/status\"\n        },\n        \"attrs\": [\n            \"id\",\n            \"heartbeat\"\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/subscriptions/",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create subscription order integration",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"backend subscription for work orders integration\",\n    \"subject\": {\n        \"entities\": [\n            {\n                \"idPattern\": \".*\",\n                \"type\": \"WorkOrder\"\n            }\n        ],\n        \"condition\": {\n            \"attrs\": [\n                \"integratedAt\"\n            ]\n        }\n    },\n    \"notification\": {\n        \"http\": {\n            \"url\": \"http://192.168.1.20:8090/api/broker/workorder/notification\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{orion_url}}/v2/subscriptions/",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"subscriptions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all subscriptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/subscriptions?limit=1000&options=count",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"subscriptions"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1000"
+										},
+										{
+											"key": "options",
+											"value": "count"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/types?options=values",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"types"
+									],
+									"query": [
+										{
+											"key": "options",
+											"value": "values"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all registrations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/registrations?limit=1000",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"registrations"
+									],
+									"query": [
+										{
+											"key": "attrs",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "options",
+											"value": "count",
+											"disabled": true
+										},
+										{
+											"key": "q",
+											"value": "refWarehouse==urn:ngsi-ld:Warehouse:1597343984645",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Material",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get subscription by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/subscriptions/60423b36a8922860d42fc9a3",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"subscriptions",
+										"60423b36a8922860d42fc9a3"
+									],
+									"query": [
+										{
+											"key": "attrs",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "options",
+											"value": "count",
+											"disabled": true
+										},
+										{
+											"key": "q",
+											"value": "refWarehouse==urn:ngsi-ld:Warehouse:1597343984645",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Material",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete subscription by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{orion_url}}/v2/subscriptions/6040b748a8922860d42fc839",
+									"host": [
+										"{{orion_url}}"
+									],
+									"path": [
+										"v2",
+										"subscriptions",
+										"6040b748a8922860d42fc839"
+									],
+									"query": [
+										{
+											"key": "attrs",
+											"value": "id",
+											"disabled": true
+										},
+										{
+											"key": "options",
+											"value": "count",
+											"disabled": true
+										},
+										{
+											"key": "q",
+											"value": "refWarehouse==urn:ngsi-ld:Warehouse:1597343984645",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "Material",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "simulator",
+			"item": [
+				{
+					"name": "robot",
+					"item": [
+						{
+							"name": "subscribe status",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_robot_simulator}}/api/simulator/robot/urn:ngsi-ld:AMR:54b20314ea5b/status",
+									"host": [
+										"{{url_robot_simulator}}"
+									],
+									"path": [
+										"api",
+										"simulator",
+										"robot",
+										"urn:ngsi-ld:AMR:54b20314ea5b",
+										"status"
+									],
+									"query": [
+										{
+											"key": "robotId",
+											"value": "urn:ngsi-ld:AMR:abcd",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sap",
+					"item": [
+						{
+							"name": "generate orders",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"day\": \"2021-03-22\",\n    \"startHour\": \"16:25\",\n    \"numberOrders\": 1,\n    \"timeBetween\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_sap_simulator}}/api/simulator/sap/orders/generate",
+									"host": [
+										"{{url_sap_simulator}}"
+									],
+									"path": [
+										"api",
+										"simulator",
+										"sap",
+										"orders",
+										"generate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

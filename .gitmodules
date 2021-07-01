@@ -6,10 +6,6 @@
 	path = fi-brew
 	url = https://github.com/Dalma-Systems/fi-brew
 	branch = main
-[submodule "latte"]
-	path = latte
-	url = https://github.com/Dalma-Systems/latte
-	branch = main
 [submodule "broker"]
 	path = broker
 	url = https://github.com/Dalma-Systems/broker
@@ -20,3 +16,7 @@
 [submodule "commons"]
 	path = commons
 	url = https://github.com/Dalma-Systems/commons.git
+[submodule "latte"]
+        path = latte
+        url = https://github.com/Dalma-Systems/latte.git
+        branch = main

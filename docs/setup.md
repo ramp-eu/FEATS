@@ -42,6 +42,8 @@ Before proceeding, make sure the Postman enviroment is correctly set up. For thi
 | url_coffee | http://localhost:8092  |
 | url        | http://localhost:8080  |
 
+**Note:** *if there is no enviroment set, you will need to create one with the variables shown above.*
+
 After importing, let us create the different entities:
 
 ### Adding an AMR

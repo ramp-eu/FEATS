@@ -19,7 +19,7 @@ In order to run the whole system, we must first build the individual images. It 
 
 These packages are used by all the others, so they must be built first.
 
-1. After cloning the whole repository, `cd` into the `commons` folder and run `mvn clean install`:
+1. After cloning the whole [repository](https://github.com/Dalma-Systems/FEATS), `cd` into the `commons` folder and run `mvn clean install`:
 ```shell
 $ cd FEATS/commons
 $ mvn clean install
